@@ -1,0 +1,33 @@
+<!-- border 边框 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+border 边框：
+可以设置样式（实线、虚线等）、宽度和颜色，围绕 padding 的线条，会增加元素的总尺寸
+-->
+
+<div class="div1">
+    <div class="div2">hello world!</div>
+</div>
+</body>
+
+<style>
+    .div1 {
+        background-color: red;
+        height: 100px;
+        width: 50%;
+    }
+    .div2 {
+        border: 70px solid gray;
+        background-color: orange;
+        /* 长款百分比只控制内容百分比，没有包含 border */
+        height: 100%;
+        width: 50%;
+    }
+</style>
+</html>

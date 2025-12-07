@@ -1,0 +1,69 @@
+<!-- css 多种不同的选择器 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css选择器</title>
+</head>
+<body>
+<!-- 元素选择器 -->
+<div>
+    <!-- 后代选择器 -->
+    <p>元素选择器</p>
+</div>
+<!-- 类选择器（最常用） -->
+<div class="selection-class"></div>
+<!-- id 选择器 -->
+<div id="selection-id"></div>
+<!-- 子选择器(只选直接子元素) -->
+<div class="selection-child">
+    <div>
+        <div></div>
+    </div>
+</div>
+<!-- 群组选择器 -->
+<h1>群组选择器 h1</h1>
+<h2>群组选择器 h2</h2>
+<h3>群组选择器 h3</h3>
+</body>
+
+<style>
+    /* 元素选择器 */
+    div {
+        height: 100px;
+        border: 1px solid #ccc;
+    }
+
+    /* 后代选择器 */
+    div p {
+        color: red;
+    }
+
+    /* 类选择器（最常用） */
+    .selection-class {
+        background-color: orange;
+    }
+
+    /* id 选择器 */
+    #selection-id {
+        background-color: yellow;
+    }
+
+    /* 子选择器（直接子孩子）*/
+    .selection-child > div {
+        background-color: green;
+        height: 50%;
+    }
+
+    .selection-child > div > div {
+        background-color: cyan;
+        height: 50%;
+    }
+
+    /* 群组选择器 */
+    h1, h2, h3 {
+        background-color: blue;
+    }
+</style>
+
+</html>

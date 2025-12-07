@@ -1,0 +1,88 @@
+<!-- margin 外边距 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边距</title>
+</head>
+<body>
+<!--
+margin 外边距：
+不像 padding 那样会被内容的背景色所填充
+一般用于控制元素和元素之间的距离
+
+margin 是不包含 border 的
+content 是包含 padding 的
+
+两元素 margin 上下相隔，取最大的 margin 值！而不是取相加！
+两元素 margin 左右相隔，取相加的 margin 值！而不是取最大！
+
+-->
+
+<div class="margin">
+    margin
+</div>
+
+<!--
+A 向下 margin 10px，B 向上 margin 10px，
+最终两元素相隔是 10px，而不是 20px！
+-->
+<div class="margin-bottom">
+    margin-bottom
+</div>
+<div class="margin-top">
+    margin-top
+</div>
+
+<!--
+A 向右 margin 10px，B 向左 margin 10px，
+最终两元素相隔是 20px，而不是 10px！
+-->
+<div class="display-flex">
+    <div class="margin-right">
+        margin-right
+    </div>
+    <div class="margin-left">
+        margin-left
+    </div>
+</div>
+</body>
+
+<style>
+    div {
+        border: 1px solid gray;
+    }
+
+    .margin {
+        height: 100px;
+        width: 50%;
+        margin: 10px; /* 上下左右10px */
+    }
+
+    .margin-bottom {
+        height: 100px;
+        width: 50%;
+        margin-bottom: 10px; /* 底部10px */
+    }
+
+    .margin-top {
+        height: 100px;
+        width: 50%;
+        margin-top: 10px; /* 顶部10px */
+    }
+
+    .display-flex {
+        display: flex;
+        height: 100px;
+    }
+
+    .margin-right {
+        width: 200px;
+        margin-right: 20px; /* 右侧10px */
+    }
+    .margin-left {
+        width: 200px;
+        margin-left: 20px; /* 右侧10px */
+    }
+</style>
+</html>

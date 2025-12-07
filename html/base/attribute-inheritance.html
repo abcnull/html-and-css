@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- css 属性哪些可以不断被 html 子标签继承，哪些则只能直接作用于当前标签 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css属性值哪些可以继承</title>
+</head>
+<body>
+<!--
+可往 html 更里层的子子标签继承的属性：（文本相关属性）
+color：文字颜色
+font-family：字体
+font-size：字体大小
+line-height：行高
+text-align：文本对齐
+
+不可往 html 更里层的子子标签继承的属性（布局相关）
+background-color：背景色
+width、height：宽高
+margin、padding：边距和内边距
+border：边框
+
+总结：
+文本相关的属性通常会继承
+布局相关的属性通常不会继承
+-->
+
+<!-- 可不断被继承 -->
+<div class="inheritance-able">
+    hello
+    <div>
+        world
+    </div>
+</div>
+
+<!-- 不可被继承 -->
+<div class="inheritance-unable">
+    hello
+    <div>
+        world
+    </div>
+</div>
+</body>
+</html>
+
+<style>
+    /* 可不断被继承 */
+    .inheritance-able {
+        border: 1px solid gray;
+
+        color: red; /* 可往内层标签传递 */
+        font-size: 16px; /* 可往内层标签传递 */
+    }
+
+    /* 不可被继承 */
+    .inheritance-unable {
+        border: 1px solid gray; /* 不可往内层标签传递 */
+        height: 100px; /* 不可往内层标签传递 */
+        background-color: orange; /* 不可往内层标签传递 */
+    }
+</style>

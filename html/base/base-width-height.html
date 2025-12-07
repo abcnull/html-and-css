@@ -1,0 +1,25 @@
+<!-- 基本的 height 和 width 使用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+最开始的 div 的 width 最常用可以设置 100%，但是 height 不能设置 100%，要设置一个具体的 px
+
+块级元素（如<div>）的width和height默认值虽均为auto，但表现行为不同
+
+当父div宽度固定（如50px），子 div 默认是 width: auto 时，子div会默认占据父div的全部可用宽度（即继承父div的宽度50px）
+这是因为块级元素在水平方向上的默认布局逻辑是"填充父容器的可用空间"，除非设置了显式宽度或受其他布局（如浮动、定位）影响
+
+当父div高度固定（如100px），子div默认是height: auto时，子div高度确实由其内容决定
+若子div无内容，高度为0px。若内容高度小于父div高度，子div高度等于内容高度。若内容高度超过父div高度，子div会"溢出"父容器
+
+为什么 height 和 width 的 auto 表现行为不同：
+水平方向：块级元素需要"约束宽度"以确保文本换行（符合阅读习惯），因此默认填充父容器宽度。
+垂直方向：块级元素需要"适应内容高度"以支持动态内容（如长文本、列表），因此高度由内容决定，而非强制继承父容器高度
+-->
+</body>
+</html>

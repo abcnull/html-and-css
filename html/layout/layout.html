@@ -1,0 +1,129 @@
+<!-- css 布局 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+</head>
+<body>
+<!-- flex 布局 -->
+<!--
+width：宽度默认会继承父元素的「可用宽度」（通常是浏览器视口宽度），即使父元素没有显式设置 width，子元素的百分比宽度也能基于视口宽度计算
+height：百分比高度 必须依赖父元素的「显式高度」（即父元素必须有明确的 height 值）。如果父元素的高度是「自适应内容」（默认行为），子元素的百分比高度会失效
+-->
+<div class="section1">
+    <div class="section1-left">
+        flex 布局 left
+    </div>
+    <div class="section1-right">
+        flex 布局 right
+    </div>
+</div>
+
+<!-- block 布局 -->
+<div class="section2">
+    <div class="section2-up">
+        默认 block 布局 up
+    </div>
+    <div class="section2-down">
+        默认 block 布局 down
+    </div>
+</div>
+
+<!-- grid 布局 -->
+<!--
+网格布局，复杂的行列结构比较适合
+-->
+<div class="section3">
+    <div class="section3-item">
+        grid 布局 1 行 1 列
+    </div>
+    <div class="section3-item">
+        grid 布局 1 行 2 列
+    </div>
+    <div class="section3-item">
+        grid 布局 2 行 1 列
+    </div>
+    <div class="section3-item">
+        grid 布局 2 行 2 列
+    </div>
+</div>
+
+<!-- position 布局 -->
+<div class="section4">
+    <div class="section4-relative">
+        position 相对布局 relative
+    </div>
+    <div class="section4-absolute">
+        position 绝对布局 absolute
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<style>
+    /* flex */
+    .section1 {
+        display: flex;
+        height: 100px;
+    }
+    .section1 .section1-left {
+        background-color: red;
+        width: 50%;
+        height: 100%;
+    }
+    .section1 .section1-right {
+        background-color: orange;
+        width: 50%;
+        height: 100%;
+    }
+
+    /* block */
+    .section2 {
+        display: block; /* 默认 block */
+        height: 100px;
+    }
+    .section2 .section2-up {
+        background-color: yellow;
+        width: 50%;
+        height: 50%;
+    }
+    .section2 .section2-down {
+        background-color: green;
+        width: 50%;
+        height: 50%;
+    }
+
+    /* grid */
+    .section3 {
+        display: grid; /* 默认 block */
+        height: 100px;
+        grid-template-columns: repeat(2, 1fr); /* 2列，每列等宽 */
+        grid-template-rows: 50% 50%; /* 2行，每行 50% 高 */
+    }
+    .section3 .section3-item {
+        background-color: cyan;
+        border: 1px solid #ccc; /* 添加灰色边框 */
+    }
+
+    /* position */
+    .section4 {
+        height: 100px;
+    }
+    .section4 .section4-relative {
+        position: relative; /* 相对定位容器 */
+        background-color: blue;
+        width: 50%;
+        height: 100%;
+    }
+    .section4 .section4-absolute {
+        position: absolute;
+        background-color: purple;
+        width: 300px;
+        height: 50px;
+        top: 400px;
+        right: 10px;
+    }
+</style>

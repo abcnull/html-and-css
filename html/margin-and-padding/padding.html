@@ -1,0 +1,29 @@
+<!-- padding 内边距 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+padding 内边距：
+内容的背景色会延伸到 padding 区域！
+
+总宽度 = content宽度 + 左右padding + 左右border + 左右margin
+
+总宽度 = 设置的width（包含content + padding + border）
+-->
+<div style="height:100px; width:50%; background-color: gray">
+    <div class="button">搜索</div>
+</div>
+</body>
+
+<style>
+    .button {
+        padding: 10px 20px; /* 上下10px，左右20px */
+        background-color: #007bff; /* 颜色延伸到了 padding 区域！ */
+        color: white; /* 文字颜色 */
+    }
+</style>
+</html>
