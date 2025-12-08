@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- 元素的背景一般该怎么设置呢 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素背景设置</title>
+</head>
+<body>
+<!--
+css 中有很多设置元素背景标签，这里举出非常常用的
+background-color - 背景颜色
+background-image - 背景图片
+background-repeat - 控制图片重复
+background-position - 背景位置
+background-size - 背景大小
+background-attachment - 背景滚动
+background 简写，顺序：背景色 图片地址 重复方式 位置/大小
+-->
+
+<!-- 如果只设置背景色 background-color 就足够 -->
+<!-- 注意 background-color 设置背景色，color 是设置文字颜色 -->
+<div class="bg-color">
+    background-color: red;
+</div>
+<!-- 如果设置背景图片 background-image 就行 -->
+<!-- 图片展示没有缩放，图片被截断 -->
+<div class="bg-image">
+    background-image: url('cat.JPG');
+</div>
+<!-- background 简写是开发中非常常用的方式，包含了 背景色 图片地址 重复方式 位置/大小 -->
+<!-- 这个图片完全在 div 中，其他区域用背景色填充了 -->
+<div class="bg1">
+    background: #33cccc url('cat.JPG') no-repeat center/contain;
+    background: 背景色 图片地址 重复方式 位置/大小;
+</div>
+<!-- background 简写是开发中非常常用的方式，包含了 背景色 图片地址 重复方式 位置/大小 -->
+<!-- 这个图片通过自动调控比例，完全把 div 覆盖 -->
+<div class="bg2">
+    background: #33cccc url('cat.JPG') no-repeat center/cover;
+    background: 背景色 图片地址 重复方式 位置/大小;
+</div>
+</body>
+
+<style>
+    .bg-color {
+        background-color: red;
+        height: 100px;
+        width: 100%;
+    }
+    .bg-image {
+        height: 500px;
+        border: 1px solid blue;
+        background-image: url('cat.JPG');
+    }
+    .bg1 {
+        height: 400px;
+        width: 100px;
+        border: 1px solid greenyellow;
+        background: #33cccc url('cat.JPG') no-repeat center/contain; /* 图片取到了中间部分 */
+    }
+    .bg2 {
+        height: 400px;
+        width: 100px;
+        border: 1px solid greenyellow;
+        background: #33cccc url('cat.JPG') no-repeat center/cover; /* 图片取到了中间部分 */
+    }
+
+</style>
+</html>

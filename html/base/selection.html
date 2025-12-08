@@ -25,6 +25,11 @@
 <h1>群组选择器 h1</h1>
 <h2>群组选择器 h2</h2>
 <h3>群组选择器 h3</h3>
+<!-- 兄弟选择器 -->
+<div class="selection-bro">
+    <div>兄弟选择器 left</div>
+    <div>兄弟选择器 right</div>
+</div>
 </body>
 
 <style>
@@ -63,6 +68,25 @@
     /* 群组选择器 */
     h1, h2, h3 {
         background-color: blue;
+    }
+
+    /* 兄弟选择器 */
+    .selection-bro {
+        display: flex;
+        height: 100px;
+        width: 100%;
+    }
+
+    .selection-bro div:nth-child(1) {
+        height: 100%;
+        width: 20%;
+        background-color: purple;
+    }
+
+    .selection-bro div:nth-child(2) {
+        height: 100%;
+        width: 80%;
+        background-color: red;
     }
 </style>
 

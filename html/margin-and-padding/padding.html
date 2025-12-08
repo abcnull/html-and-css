@@ -10,9 +10,14 @@
 padding 内边距：
 内容的背景色会延伸到 padding 区域！
 
-总宽度 = content宽度 + 左右padding + 左右border + 左右margin
+标签元素宽度 = content宽度 + 左右padding + 左右border
+标签元素高度类似
+所以给一个 div 设置 background-color，这个 background-color 作用的是这个标签元素，等于告诉这个元素背景色是某哦个颜色，所以这个颜色会填充 content + padding + border 区域
+但是要注意，width 和 height 控制的实际是 content 区域！
 
-总宽度 = 设置的width（包含content + padding + border）
+而 margin 呈现的则是标签元素所表示的宽度和高度之外的区域
+
+padding 一般用在描述元素中的内容和元素相隔，而 margin 则描述元素和元素之间相隔
 -->
 <div style="height:100px; width:50%; background-color: gray">
     <div class="button">搜索</div>

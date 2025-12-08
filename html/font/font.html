@@ -1,0 +1,80 @@
+<!-- 字体相关的 css 设置 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>font字体设置</title>
+</head>
+<body>
+<!--
+字体设置的 css 有很多，比如：
+color - 字体颜色（最常用！）⭐️
+font-family - 字体类型（最常用！）⭐️
+font-size - 字体大小（最常用！）⭐️
+font-weight - 字体粗细（最常用！）⭐️
+font-style - 字体样式（斜体）
+line-height - 行高（超重要！）⭐️
+font - 字体简写（超实用！）
+-->
+<div>
+    <p>hello world! 你好世界！</p>
+    <p>hello world! 你好世界！</p>
+    <p>hello world! 你好世界！</p>
+    <p>hello world! 你好世界！</p>
+    <p>hello world! 你好世界！</p>
+    <p>hello world! 你好世界！</p>
+    <p>hello world! 你好世界！</p>
+    <p>hello world! 你好世界！</p>
+</div>
+</body>
+<style>
+    div {
+        height: 500px;
+        width: 100%;
+        background-color: gray;
+    }
+
+    div p:nth-child(1) {
+    }
+
+    div p:nth-child(2) {
+        color: red;
+    }
+
+    div p:nth-child(3) {
+        /* 指定多个字体，按优先级排序，如果用户电脑没装某个字体，就按照优先级，都没有就用默认字体 */
+        font-family: Arial, 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', sans-serif;
+    }
+
+    div p:nth-child(4) {
+        font-size: 10px; /* 固定像素，最常用 */
+        /*font-size: 1.6rem;        !* 相对于根元素（html）的大小，适合响应式 *!*/
+        /*font-size: 1.2em;         !* 相对于父元素的大小 *!*/
+        /*font-size: 100%;          !* 相对于父元素的大小 *!*/
+    }
+
+    div p:nth-child(5) {
+        font-weight: bold; /* 等同于700 */
+        /*font-weight: 700;         !* 700就是加粗 *!*/
+        /*font-weight: 300;         !* 比normal细 *!*/
+    }
+
+    div p:nth-child(6) {
+        /*font-style: normal;       !* 默认值 *!*/
+        font-style: italic; /* 斜体 */
+        /*font-style: oblique;      !* 倾斜，和italic类似但机制不同 *!*/
+    }
+
+    div p:nth-child(7) {
+        line-height: 4.5; /* 推荐用无单位数字，1.5倍字体大小 */
+        /*line-height: 24px;        !* 固定行高，但不推荐 *!*/
+        /*line-height: 2em;         !* 相对于font-size *!*/
+    }
+
+    /* font简写顺序：font-style font-weight font-size/line-height font-family */
+    /* 简写时必须包含 font-size 和 font-family */
+    div p:nth-child(8) {
+        font: italic bold 16px/1.5 'Microsoft YaHei', sans-serif;
+    }
+</style>
+</html>

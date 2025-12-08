@@ -11,12 +11,16 @@ margin 外边距：
 不像 padding 那样会被内容的背景色所填充
 一般用于控制元素和元素之间的距离
 
-margin 是不包含 border 的
-content 是包含 padding 的
+margin，border，padding 分别表示各自的区域，此三者区域不会重合
+元素标签是包含 content + padding + border，但是不包含 margin
 
+block 布局下：（文档流，间隔太多时，避免文档过长的问题，所以上下 margin 间隔重叠）
 两元素 margin 上下相隔，取最大的 margin 值！而不是取相加！
 两元素 margin 左右相隔，取相加的 margin 值！而不是取最大！
 
+flex 布局下：（处理横向阅览，左右间隔太多，避免左右过长的问题，所以左右 margin 间隔重叠）
+两元素 margin 上下相隔，取相加的 margin 值！而不是取最大！
+两元素 margin 左右相隔，取最大的 margin 值！而不是取相加！
 -->
 
 <div class="margin">
