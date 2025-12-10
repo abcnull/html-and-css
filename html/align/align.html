@@ -1,0 +1,212 @@
+<!-- 各种对齐方式 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align 各种对齐方式</title>
+</head>
+<body>
+<!-- block 常用 -->
+<!--
+⭐️text-align: 文本对齐
+left：左对齐（默认值）
+center：居中对齐
+right：右对齐
+justify：两端对齐（文本会分散以填充父元素的整个宽度）
+-->
+<div class="text">
+    aaaa
+    <p>dddd</p>
+</div>
+<!--
+⭐️vertical-align: 该属性用在行内元素中，行内块元素中，注意：其代表的是别人要和自己按照某种方式对齐
+设置 top 表示别人顶部要对齐自己顶部
+设置 middle 表示别人中间要对齐自己中间
+设置 baseline 代表别人的基线要对齐自己的基线，如果是 button 其中没有元素基线就是 button 底部，如果 button 中有元素，基线就是文字基线
+下面你可以分别尝试使用使用 vertical-middle 或者 vertical-top 或者 vertical-baseline 其一看看效果
+
+为什么叫 vertical，准确说是：让元素在垂直方向上移动，来使得其他元素和自己在某个水平线上对齐
+-->
+<div class="vertical">
+    <!--    <button class="vertical-baseline">button</button>-->
+    <!--    <button class="vertical-middle">button</button>-->
+    <!--    <button class="vertical-top">button</button>-->
+    <button class="vertical-bottom">button</button>
+    <a>xxxggg</a>
+</div>
+
+
+<!-- flex 常用 -->
+<!--
+⭐️align-items: 元素对齐，控制自己的孩子怎么对齐的（垂直方向上下移动，以在某一个水平线上对齐）
+stretch：默认值，拉伸项目填满容器
+flex-start：项目从交叉轴起点开始
+flex-end：项目从交叉轴终点开始
+center：项目在交叉轴上居中
+baseline：项目基线对齐
+-->
+<div class="item">
+    <div class="item-flex">
+        <div>flex 1</div>
+        <div>flex 2</div>
+    </div>
+</div>
+<!--
+align-self: 控制自己这个元素怎么对齐的（单个项目覆盖align-items）
+覆盖容器的align-items设置，单独控制一个项目在交叉轴上的对齐方式
+常用值：与align-items相同
+-->
+<div class="self">
+    <div>child</div>
+</div>
+<!--
+align-content（多行项目间的对齐）:
+stretch：默认值，拉伸行填满容器
+center：行在容器中居中
+space-between：行间均匀分布，首行与起点对齐，末行与终点对齐
+space-around：行间均匀分布，行周围有相等空间
+
+flex 布局必须加 flex-wrap: wrap; 表示允许多行
+-->
+<div class="content">
+    <div>content 1</div>
+    <div>content 2</div>
+</div>
+<!--
+⭐️justify-content（控制自己的孩子怎么对齐，单行项目间的对齐）
+水平方向上左右移动，以在某个垂直线上对齐
+-->
+<div class="justify">
+    <div>justify 1</div>
+    <div>justify 2</div>
+</div>
+</body>
+
+<style>
+    .text {
+        background-color: red;
+        text-align: center;
+    }
+
+    .item {
+        background-color: orange;
+        height: 200px;
+        width: 100%;
+    }
+
+    .item .item-flex {
+        background-color: yellow;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+    }
+
+    .item .item-flex div:nth-child(1) {
+        background-color: green;
+        height: 30%;
+        width: 100px;
+    }
+
+    .item .item-flex div:nth-child(2) {
+        background-color: cyan;
+        height: 70%;
+        width: 200px;
+    }
+
+    .self {
+        background-color: blue;
+        display: flex;
+        height: 100px;
+        width: 100%;
+    }
+
+    .self div {
+        background-color: purple;
+        height: 50%;
+        width: 200px;
+        align-self: flex-end;
+    }
+
+    .content {
+        background-color: red;
+        display: flex;
+        flex-wrap: wrap; /* 允许多行 */
+        height: 200px;
+        width: 100%;
+        align-content: center;
+    }
+
+    .content div:nth-child(1) {
+        background-color: orange;
+        height: 50%;
+        width: 200px;
+    }
+
+    .content div:nth-child(2) {
+        background-color: yellow;
+        height: 20%;
+        width: 100px;
+    }
+
+    .justify {
+        background-color: green;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .justify div:nth-child(1) {
+        background-color: cyan;
+        height: 50%;
+        width: 200px;
+    }
+
+    .justify div:nth-child(2) {
+        background-color: blue;
+        height: 30%;
+        width: 100px;
+    }
+
+    .vertical {
+        background-color: orange;
+        padding: 10px;
+        height: 100px;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .vertical-baseline {
+        vertical-align: baseline; /* 默认值 */
+        font-size: 15px;
+        height: 90%;
+        width: 100px;
+    }
+
+    .vertical-middle {
+        vertical-align: middle;
+        font-size: 15px;
+        height: 90%;
+        width: 100px;
+    }
+
+    .vertical-top {
+        vertical-align: top;
+        font-size: 15px;
+        height: 90%;
+        width: 100px;
+    }
+
+    .vertical-bottom {
+        vertical-align: bottom;
+        font-size: 15px;
+        height: 90%;
+        width: 100px;
+    }
+
+    .vertical a {
+        background-color: gray;
+    }
+</style>
+</html>
