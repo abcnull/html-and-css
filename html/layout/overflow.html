@@ -1,0 +1,73 @@
+<!-- 常用的 overflow 属性怎么用？ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用的 overflow 属性怎么用？</title>
+</head>
+<body>
+<!-- overflow 来上下滑动 -->
+<!--
+overflow 属性只会影响自己的布局，是不可继承的
+
+overflow: auto 设置后，文本超长后，可以自动出现滚动条，实现上下滑动
+
+overflow 几种值：
+- visible (默认)	内容不被裁剪，会显示在容器外面	通常不需要，因为默认就是这个	overflow: visible;
+- hidden	溢出内容被裁剪，不显示滚动条	你确定不需要看到溢出部分	overflow: hidden;
+- scroll	无论内容是否溢出，都显示滚动条	你想要始终有滚动条，不管有没有内容溢出	overflow: scroll;
+- auto(⭐️最常用)	仅当内容溢出时显示滚动条	最常用，智能处理	overflow: auto;
+- clip	类似hidden，但禁止所有滚动	较新，兼容性略低	overflow: clip;
+-->
+<div class="box1">
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+</div>
+
+<!-- overflow + white-space 来上下滑动 + 左右滑动 -->
+<!--
+overflow: auto 设置后，文本超长后，可以自动出现滚动条，实现上下滑动
+white-space 属性默认是 wrap 表示文本横长太长时，会被自动换行，无法支持左右滑动，设置 nowrap 则表示横长超出时不会自动换行，能支持左右滑动来
+-->
+<div class="box2">
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+    <p>div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容，div 内容</p>
+</div>
+</body>
+<style>
+    .box1 {
+        height: 300px;
+        width: 100px;
+        background-color: gray;
+        overflow: auto;
+    }
+
+    .box2 {
+        height: 200px;
+        width: 100px;
+        background-color: dimgray;
+
+        overflow: auto; /* 同时处理水平和垂直 */
+        white-space: nowrap; /* 关键！防止文本换行 */
+        /*
+        overflow-x: auto;  仅水平滚动
+        overflow-y: auto;  仅垂直滚动
+        white-space: nowrap;  必须加！
+        */
+    }
+</style>
+</html>

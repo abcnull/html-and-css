@@ -1,0 +1,37 @@
+<!-- 专门用于对齐文本 -->
+
+<!--
+文本是如何对齐：
+1.文本垂直方向移动，比如垂直线上居中
+    - ⭐️但行文本使用 line-height 设置行高，对于多行文本（本质是块元素），则需要 flex 布局，然后使用 align-items: center 来让元素进行垂直线上居中即可
+2.文本水平方向移动，比如水平线上居中
+    - ⭐️text-align：父元素设置，让自己所有子孙元素的文本左右移动，比如水平线上居中
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>专门用于对齐文本</title>
+</head>
+<body>
+<!-- 控制孩子，左右移动，仅文本 -->
+<!--
+⭐️text-align: 文本对齐
+left：左对齐（默认值）
+center：居中对齐
+right：右对齐
+justify：两端对齐（文本会分散以填充父元素的整个宽度）
+-->
+<div class="text">
+    控制文本在当前所属块内的水平对齐（左右是否剧中）
+    <p>控制文本在当前所属块内的水平对齐（左右是否剧中）</p>
+</div>
+</body>
+
+<style>
+    .text {
+        background-color: red;
+        text-align: center;
+    }
+</style>
+</html>

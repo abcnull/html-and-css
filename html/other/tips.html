@@ -1,0 +1,33 @@
+<!-- 样式设计技巧 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式设计技巧</title>
+</head>
+<body>
+<!-- html 标签 -->
+<!--
+要注意：
+1.每个页面只能有一个<h1>，就像一个故事只能有一个主角。别让<h2>跳到<h4>，这会让搜索引擎和用户都困惑
+2.meta标签不能少：特别是<meta name="viewport" content="width=device-width, initial-scale=1.0">，没有这个，你的网站在手机上会惨不忍睹！
+3.lang属性要设：<html lang="zh-CN">，这个简单设置能让搜索引擎更好地理解你的内容
+-->
+
+<!-- css 样式 -->
+<!--
+要注意：
+1.可以考虑使用CSS变量：比如--primary-color: #2563eb;，这样颜色统一修改起来超方便！
+2.BEM命名规范：比如.button__icon--disabled。这样命名清晰，冲突概率大大降低。
+    - class名称：比如 class="button"，表示一个按钮的样式
+    - 内部元素：比如 class="button__icon"，表示按钮内部的 icon 图标的样式
+    - 状态修饰：比如 class="button--disabled"，表示按钮处于禁用状态的样式
+3.优先用Flexbox：比浮动 float 布局简单直观多了。比如两栏布局，用display: flex，justify-content、align-items搞定。强烈建议用Flex布局而不是float！ 现在几乎没人用float做布局了，除非是特别老的项目。
+4.保持CSS简洁：只写必要的样式，删除重复的。比如不要同时设置margin-top和padding-top
+-->
+<!--
+css 样式怎么记忆：
+1.把CSS属性分成"盒模型"、"文本"、"布局"、"动画"等类别
+-->
+</body>
+</html>

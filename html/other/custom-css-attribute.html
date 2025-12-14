@@ -1,0 +1,35 @@
+<!-- 自定义 css 属性 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义 css 属性</title>
+</head>
+<body>
+<div>
+    <div class="button">按钮</div>
+    <div class="card">卡片</div>
+</div>
+</body>
+<style>
+    /* 在:root里声明（这样整个文档都能用） */
+    :root {
+        --primary-color: #2563eb; /* 主要颜色 */
+        --font-size: 16px; /* 字体大小 */
+        --spacing: 1rem; /* 间距 */
+    }
+
+    /* 在需要的地方使用 */
+    .button {
+        color: white;
+        background-color: var(--primary-color);
+        padding: var(--spacing);
+        font-size: var(--font-size);
+    }
+
+    .card {
+        margin: var(--spacing);
+        border-radius: calc(var(--spacing) * 0.5);
+    }
+</style>
+</html>

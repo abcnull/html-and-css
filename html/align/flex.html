@@ -1,0 +1,163 @@
+<!-- flex 布局下的对齐 -->
+
+<!--
+flex 布局下元素如何对齐：
+1.想要元素上下移动来[对齐]：
+    - ⭐️(最常用)align-items：控制孩子怎么上下移动
+    - align-self：控制自己在父元素内怎么上下移动来对齐
+    - margin: 孩子给自己设置，通过设置 margin: auto 0; 来上下移动，在垂直方向上进行居中，最常用，但需父/子元素有明确的高度。对于 flex 布局，auto 在垂直方向可以自动分配空间来让其垂直居中
+2.想要元素左右移动来[对齐]：
+    - ⭐️(最常用)justify-content：控制自己的孩子怎么左右移动来对齐（分布）
+
+3.想要元素上下移动来[对齐]（另一种方式）：
+    - align-content：控制自己的孩子，多行在容器中的上下移动来分布（准确说不是对齐，而是上下移动来实现你想要的分布）
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 控制孩子，上下移动对齐，仅 flex 布局下 -->
+<!--
+⭐️align-items: 元素对齐，控制自己的孩子怎么对齐的（垂直方向上下移动，以在某一个水平线上对齐）
+stretch：默认值，拉伸项目填满容器
+flex-start：项目从交叉轴起点开始
+flex-end：项目从交叉轴终点开始
+center：项目在交叉轴上居中
+baseline：项目基线对齐
+-->
+<div class="item">
+    <div class="item-flex">
+        <div>align-items 1</div>
+        <div>align-items 2 上下移动和其他孩子保持对齐</div>
+    </div>
+</div>
+
+<!-- 控制自己，上下移动对齐，仅 flex 布局下 -->
+<!--
+align-self: 控制自己这个元素怎么对齐的（单个项目覆盖align-items）
+覆盖容器的align-items设置，单独控制一个项目在交叉轴上的对齐方式
+常用值：与align-items相同
+-->
+<div class="self">
+    <div>align-self 上下移动，让自己在父元素内对齐</div>
+</div>
+
+<!-- 控制孩子，左右移动对齐，仅 flex 布局 -->
+<!--
+⭐️justify-content（控制自己的孩子怎么对齐，弹性项目在容器主轴方向上的空间分配方式）：左右移动来对齐
+注意：默认水平方向上左右移动来对齐（flex-direction: row），如果是垂直方向（flex-direction: column），justify-content就控制垂直方向的分布
+flex-start（默认）	项目从主轴起点开始排列	左对齐
+flex-end	项目从主轴终点开始排列	右对齐
+center	项目在主轴中间居中排列	居中
+space-between	首尾项目贴边，中间等距	首尾贴边，中间间隔相等
+space-around	每个项目周围分配相同空间	两边和中间间隔相同
+space-evenly	所有间隔（包括首尾）都相等	间隔最均匀
+-->
+<div class="justify">
+    <div>justify-content 1 左右移动，分布</div>
+    <div>justify-content 2</div>
+</div>
+
+<!-- 控制孩子，上下移动对齐，block/flex 布局都可 -->
+<!--
+align-content（多行项目在容器中怎么分布）: align-content准确说不是对齐，而是控制多行在容器中的上下移动分布
+stretch（默认）：行会拉伸填满容器（就像橡皮筋一样）
+center：多行在容器中垂直居中
+flex-start：多行从容器顶部开始排列
+flex-end：多行从容器底部开始排列
+space-between：行均匀分布，首尾行贴边
+space-around：行均匀分布，两端各留一半空间
+
+flex 布局必须加 flex-wrap: wrap; 表示允许多行
+-->
+<div class="content">
+    <div>align-content 1 上下移动，分布</div>
+    <div>align-content 2</div>
+</div>
+</body>
+<style>
+    .item {
+        background-color: orange;
+        height: 200px;
+        width: 100%;
+    }
+
+    .item .item-flex {
+        background-color: yellow;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+    }
+
+    .item .item-flex div:nth-child(1) {
+        background-color: green;
+        height: 30%;
+        width: 100px;
+    }
+
+    .item .item-flex div:nth-child(2) {
+        background-color: cyan;
+        height: 70%;
+        width: 200px;
+    }
+
+    .self {
+        background-color: blue;
+        display: flex;
+        height: 100px;
+        width: 100%;
+    }
+
+    .self div {
+        background-color: purple;
+        height: 50%;
+        width: 200px;
+        align-self: flex-end;
+    }
+
+    .content {
+        background-color: red;
+        display: flex;
+        flex-wrap: wrap; /* 允许多行 */
+        height: 200px;
+        width: 100%;
+        align-content: center;
+    }
+
+    .content div:nth-child(1) {
+        background-color: orange;
+        height: 50%;
+        width: 200px;
+    }
+
+    .content div:nth-child(2) {
+        background-color: yellow;
+        height: 20%;
+        width: 100px;
+    }
+
+    .justify {
+        background-color: green;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .justify div:nth-child(1) {
+        background-color: cyan;
+        height: 50%;
+        width: 200px;
+    }
+
+    .justify div:nth-child(2) {
+        background-color: blue;
+        height: 30%;
+        width: 100px;
+    }
+</style>
+</html>

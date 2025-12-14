@@ -1,10 +1,113 @@
+<!-- 放大，缩小，圆角，旋转，倾斜，阴影，镜像，重叠，平移 等 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>放大，缩小，圆角，旋转，倾斜，阴影，镜像，重叠，平移 等</title>
 </head>
 <body>
-$END$
+<div class="shape">
+    <!-- 放大 and 缩小 -->
+    <div class="shape-scale"></div>
+    <!-- 圆角 -->
+    <div class="shape-radius"></div>
+    <!-- 旋转 -->
+    <div class="shape-rotate"></div>
+    <!-- 倾斜 -->
+    <div class="shape-skew"></div>
+    <!-- 阴影 -->
+    <div class="shape-shadow"></div>
+    <!-- 在 x/y 轴延伸 -->
+    <div class="shape-scaleX"></div>
+    <!-- 平移 -->
+    <div class="shape-translate"></div>
+    <!-- 让移动更平滑 -->
+    <div class="shape-transition"></div>
+</div>
 </body>
+<style>
+    .shape {
+        height: 800px;
+        width: 100%;
+        background-color: gray;
+    }
+
+    .shape .shape-scale {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+    }
+
+    .shape .shape-scale:hover {
+        transform: scale(1.3); /* 放大 1.3 倍 */
+    }
+
+    .shape .shape-radius {
+        height: 100px;
+        width: 100px;
+        background-color: orange;
+        border-radius: 20px; /* 可以是px、%等 */
+    }
+
+    .shape .shape-rotate {
+        height: 100px;
+        width: 100px;
+        background-color: yellow;
+    }
+
+    .shape .shape-rotate:hover {
+        transform: rotate(30deg); /* 顺时针旋转30度 */
+        /* 支持单位：deg(度)、rad(弧度)、turn(圈)，负值表示逆时针旋转 */
+    }
+
+    .shape .shape-skew {
+        height: 100px;
+        width: 100px;
+        background-color: green;
+    }
+
+    .shape .shape-skew:hover {
+        transform: skew(15deg, 5deg); /* X轴倾斜15度，Y轴倾斜5度 */
+    }
+
+    .shape .shape-shadow {
+        height: 100px;
+        width: 100px;
+        background-color: cyan;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* 水平偏移 垂直偏移 模糊半径 颜色 */
+    }
+
+    .shape .shape-scaleX {
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+    }
+
+    .shape .shape-scaleX:hover {
+        /*transform: scaleX(2); !* x 轴延伸 *!*/
+        transform: scaleY(2); /* y 轴延伸 */
+    }
+
+    .shape .shape-translate {
+        height: 100px;
+        width: 100px;
+        background-color: purple;
+    }
+
+    .shape .shape-translate:hover {
+        transform: translate(20px, 15px); /* 向右20px，向下15px */
+    }
+
+    .shape .shape-transition {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+    }
+
+    .shape .shape-transition:hover {
+        transform: translate(20px, 15px); /* 向右20px，向下15px */
+        transition: transform 0.3s ease;
+    }
+
+</style>
 </html>

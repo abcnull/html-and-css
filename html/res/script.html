@@ -1,0 +1,28 @@
+<!-- script 引用资源 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>script 引用资源</title>
+</head>
+<body>
+    <div>
+        hello world!
+    </div>
+
+    <!--
+    script 一般放在 body 中，因为JS会阻塞页面渲染，如果放在head里，浏览器会先加载JS再渲染内容，用户会等得更久
+    并且 script 应该放在所有div布局之后，用户能看到页面内容，而不是等待脚本加载完才看到内容。并且所有div已经加载完成，可以安全操作DOM
+    -->
+
+    <!-- 引用本地JS文件 -->
+    <script src="js/script.js"></script>
+
+    <!-- 引用在线JS文件 -->
+    <script src="https://cdn.example.com/script.js"></script>
+
+    <!-- 带异步加载的JS -->
+    <script src="script.js" async></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

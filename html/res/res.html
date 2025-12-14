@@ -1,0 +1,47 @@
+<!-- 图片，音视频 html 标签 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片，音视频 html 标签</title>
+</head>
+<body>
+<!-- img -->
+<!--
+div 没有设置高度和宽度，所以都是 auto，因为是 block，所以宽度自动 100%，高度自动 0px
+div 的高度由里头 img 所撑开，宽度是 100%
+-->
+<div>
+    <img src="cat.JPG" alt="cat" width="300" height="200">
+</div>
+
+<!-- audio -->
+<!--
+controls：显示播放按钮（播放/暂停/音量）
+autoplay：自动播放（但大部分浏览器会阻止有声音的自动播放，所以最好配合muted）
+loop：循环播放
+支持格式：MP3、WAV、OGG
+用 <source> 提供多种格式，浏览器会自动选它能播放的
+-->
+<audio controls autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    <source src="music.ogg" type="audio/ogg">
+    您的浏览器不支持音频播放。
+</audio>
+
+<!-- video -->
+<!--
+controls：显示播放控制条
+autoplay：自动播放（需要配合muted，因为浏览器会阻止有声音的自动播放）
+loop：循环播放
+width 和 height：设置视频播放器大小
+支持格式：MP4、WebM、OGG
+同样用 <source> 提供多种格式
+-->
+<video controls width="640" height="360" autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
+    您的浏览器不支持视频播放。
+</video>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!-- block 布局下的对齐 -->
+
+<!--
+block 布局下元素如何对齐：
+1.想要元素上下移动来[对齐]：
+    1.1 想要元素上下移动来[对齐]：
+        - ⭐️(最常用)margin: 孩子自己调控边距来控。但实际中如果 block 布局中需要垂直居中，一般切换为 flex 布局，然后用 align-items 属性解决垂直居中的问题
+        - align-content：控制自己的孩子，多行在容器中的上下移动来分布（准确说不是对齐，而是上下移动来实现你想要的分布）
+    1.2 一个 block 元素中，行内元素上下移动来[对齐]：
+        - ⭐️vertical-align：block 布局下，行内元素自己配置，控制自己上下移动，和该行的行框哪一行发生对齐
+        - todo
+2.想要元素左右移动来[对齐]：
+    2.1 想要元素左右移动来[对齐]
+        - ⭐️(最常用)margin: 孩子给自己设置，通过设置 margin: 0 auto; 来左右移动，在水平方向上进行居中，最常用，但需父/子元素有明确的宽度。对于 block 布局，auto 在水平方向可以自动分配空间来让其水平居中
+    2.2 一个 block 元素中，行内元素左右移动来[对齐]：
+        - ⭐️text-align：block 布局下，父元素配置，控制自己孩子的文本左右移动，比如是否水平线上是否居中。text-align 不仅可以居中文本，还可以居中行内元素
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>block 布局下的对齐</title>
+</head>
+<body>
+<!-- 控制孩子，上下移动对齐，block/flex 布局都可 -->
+<!--
+align-content（多行项目在容器中怎么分布）: align-content准确说不是对齐，而是控制多行在容器中的分布
+stretch（默认）：行会拉伸填满容器（就像橡皮筋一样）
+center：多行在容器中垂直居中
+flex-start：多行从容器顶部开始排列
+flex-end：多行从容器底部开始排列
+space-between：行均匀分布，首尾行贴边
+space-around：行均匀分布，两端各留一半空间
+-->
+<div class="content">
+    <div>content 1</div>
+    <div>content 2</div>
+</div>
+</body>
+
+<!-- 控制自己，上下移动，仅 block 布局的行内元素 -->
+<!--
+⭐️vertical-align: 该属性用在行内元素中，让行内元素自己在竖直方向上和行框顶部或者底部或者哪一行对齐
+前置知识：
+1.vertical-align 只能用在行内元素（包含行内块元素），注意如果是 flex 布局下，其子元素可不属于行内元素了！所以只能用于 block 布局下的行内元素中！
+2.block 布局下如果该行有多个行内元素，那么这些行内元素会统一有一个行框，行框的 height 有最高的行内元素决定
+3.vertical-align 就是行内元素对齐行框的哪一水平线，进行上下移动
+4.button 是行内块元素！
+5.为什么叫 vertical，准确说是：让元素在垂直方向上移动，来使得其他元素和自己在某个水平线上对齐
+设置 top 表示自己顶部要对齐行框顶部
+设置 middle 表示自己中间要对齐行框中间
+设置 baseline 代表自己的基线要对齐行框的基线，如果是 button 其中没有元素，基线就是 button 底部，如果 button 中有元素，基线就是文字基线
+下面你可以分别尝试使用使用 vertical-middle 或者 vertical-top 或者 vertical-baseline 其一看看效果
+-->
+<div class="vertical">
+  <button class="vertical-bottom">bottom</button>
+  <button class="vertical-top">top</button>
+  <a>xxxggg</a>
+</div>
+
+<style>
+  .vertical {
+    background-color: orange;
+    height: 100px;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+  }
+
+  .vertical-bottom {
+    font-size: 15px;
+    height: 90%;
+    width: 100px;
+  }
+
+  .vertical-top {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    vertical-align: top;
+  }
+
+  .vertical a {
+    background-color: gray;
+    vertical-align: bottom;
+  }
+
+  .content {
+      background-color: red;
+      height: 200px;
+      width: 100%;
+      align-content: center;
+  }
+
+  .content div:nth-child(1) {
+      background-color: orange;
+      height: 50%;
+      width: 200px;
+  }
+
+  .content div:nth-child(2) {
+      background-color: yellow;
+      height: 20%;
+      width: 100px;
+  }
+</style>
+</html>
